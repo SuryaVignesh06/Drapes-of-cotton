@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/typography.css";
+
+/* ==========================================================================
+   DRAPES OF COTTON — EDITORIAL STOREFRONT PALETTE
+   Crisp gallery white #FFFFFF, studio neutral #F3F2EF, soft alabaster #F9F8F6,
+   deep ink #1A1A18, muted slate #6E6D68, hairline #E5E3DD.
+   ========================================================================== */
+
+:root {
+  --ivory: #ffffff;
+  --soft-cream: #f9f8f6;
+  --cotton-beige: #f3f2ef;
+  --muted-olive: #1a1a18;
+  --sage-olive: #6e6d68;
+  --deep-earth-olive: #1a1a18;
+  --natural-linen: #e5e3dd;
+  --muted-sand: #dcd9d0;
+  --dusty-taupe: #9b9992;
+  --warm-stone: #6e6d68;
+
+  /* Semantic Surface & Text Tokens */
+  --background: #ffffff;
+  --foreground: #1a1a18;
+  --surface: #ffffff;
+  --surface-secondary: #f9f8f6;
+  --surface-cotton: #f3f2ef;
+
+  /* Card & Popover Surfaces */
+  --card: #ffffff;
+  --card-foreground: #1a1a18;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a18;
+
+  /* Actions & Accents */
+  --primary: #1a1a18;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f2ef;
+  --secondary-foreground: #1a1a18;
+  --accent: #f3f2ef;
+  --accent-foreground: #1a1a18;
+  --accent-olive: #333330;
+
+  /* Structural Tokens */
+  --muted: #f3f2ef;
+  --muted-foreground: #6e6d68;
+  --border: #e5e3dd;
+  --input: #dcd9d0;
+  --ring: #1a1a18;
+
+  /* Status */
+  --destructive: #a13a2e;
+  --destructive-foreground: #ffffff;
+
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Border Radius Tokens */
+  --radius: 4px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  /* Clean Flat Shadows */
+  --shadow-subtle: 0 1px 2px rgba(26, 26, 24, 0.04);
+  --shadow-card: 0 8px 24px -10px rgba(26, 26, 24, 0.08);
+  --shadow-panel: 0 16px 36px -14px rgba(26, 26, 24, 0.12);
+
+  /* Sidebar */
+  --sidebar: #f9f8f6;
+  --sidebar-foreground: #1a1a18;
+  --sidebar-primary: #1a1a18;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3f2ef;
+  --sidebar-accent-foreground: #1a1a18;
+  --sidebar-border: #e5e3dd;
+  --sidebar-ring: #1a1a18;
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-jakarta), var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-cotton: var(--surface-cotton);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-olive: var(--accent-olive);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-ivory: var(--ivory);
+  --color-soft-cream: var(--soft-cream);
+  --color-cotton-beige: var(--cotton-beige);
+  --color-muted-olive: var(--muted-olive);
+  --color-sage-olive: var(--sage-olive);
+  --color-deep-earth-olive: var(--deep-earth-olive);
+  --color-natural-linen: var(--natural-linen);
+  --color-muted-sand: var(--muted-sand);
+  --color-dusty-taupe: var(--dusty-taupe);
+  --color-warm-stone: var(--warm-stone);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-subtle: var(--shadow-subtle);
+  --shadow-card: var(--shadow-card);
+  --shadow-panel: var(--shadow-panel);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    color-scheme: light only;
+    background-color: #ffffff;
+    color: #1a1a18;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #1a1a18;
+    font-family: var(--font-jakarta), var(--font-inter), system-ui, -apple-system, sans-serif;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #f3f2ef;
+    color: #1a1a18;
+  }
+}

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750">
+  <defs>
+    <radialGradient id="studioBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#F3F1EC"/>
+      <stop offset="100%" stop-color="#ECEAE4"/>
+    </radialGradient>
+    <linearGradient id="fabricBase" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0%" stop-color="#F2EFE8"/>
+      <stop offset="52%" stop-color="#E5E0D5"/>
+      <stop offset="100%" stop-color="#D6CFC0"/>
+    </linearGradient>
+    <linearGradient id="foldHighlight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#1A1A18" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    </linearGradient>
+    <pattern id="cottonSlub" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 3H12M0 9H12M4 0V12M10 0V12" stroke="#1A1A18" stroke-width="0.45" stroke-opacity="0.14"/>
+    </pattern>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1A1A18" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="600" height="750" fill="url(#studioBg)"/>
+  
+    <g filter="url(#softShadow)">
+      <!-- Graceful studio-folded cotton saree silhouette -->
+      <path d="M165 110 C165 92, 180 82, 200 82 L400 82 C420 82, 435 92, 435 110 L462 595 C463 614, 448 628, 428 628 L172 628 C152 628, 137 614, 138 595 Z" fill="url(#fabricBase)"/>
+      <path d="M165 110 C165 92, 180 82, 200 82 L400 82 C420 82, 435 92, 435 110 L462 595 C463 614, 448 628, 428 628 L172 628 C152 628, 137 614, 138 595 Z" fill="url(#cottonSlub)"/>
+      <!-- Soft vertical pleat drapes -->
+      <path d="M210 82 C230 260, 222 440, 198 628 L242 628 C262 440, 270 260, 250 82 Z" fill="url(#foldHighlight)"/>
+      <path d="M295 82 C315 260, 308 440, 286 628 L334 628 C350 440, 355 260, 336 82 Z" fill="url(#foldHighlight)"/>
+      <path d="M372 82 C392 260, 385 440, 368 628 L412 628 C425 440, 428 260, 408 82 Z" fill="url(#foldHighlight)"/>
+      <!-- Woven selvedge & pallu border band -->
+      <path d="M142 505 L458 505 L462 586 L138 586 Z" fill="#3B4A3E"/>
+      <line x1="142" y1="516" x2="458" y2="516" stroke="#F9F8F6" stroke-width="2"/>
+      <line x1="141" y1="528" x2="459" y2="528" stroke="#F9F8F6" stroke-width="0.9" stroke-dasharray="5 5" stroke-opacity="0.8"/>
+      <line x1="139" y1="574" x2="461" y2="574" stroke="#F9F8F6" stroke-width="2"/>
+      <!-- Diagonal shoulder pallu drape -->
+      <path d="M178 82 L262 82 L292 465 C293 476, 284 484, 272 484 L166 484 C155 484, 148 475, 149 464 Z" fill="url(#fabricBase)" stroke="#3B4A3E" stroke-width="1.2" stroke-opacity="0.28"/>
+      <path d="M178 82 L262 82 L292 465 C293 476, 284 484, 272 484 L166 484 C155 484, 148 475, 149 464 Z" fill="url(#cottonSlub)"/>
+      <path d="M153 410 L287 410 L290 458 L150 458 Z" fill="#3B4A3E"/>
+      <line x1="153" y1="420" x2="287" y2="420" stroke="#F9F8F6" stroke-width="1.8"/>
+      <line x1="151" y1="448" x2="289" y2="448" stroke="#F9F8F6" stroke-width="1.8"/>
+    </g>
+    <!-- Delicate cotton fringe tassels at bottom -->
+    <g stroke="#D6CFC0" stroke-width="1.2" stroke-opacity="0.55">
+      <line x1="168" y1="628" x2="166" y2="646"/><line x1="186" y1="628" x2="184" y2="646"/>
+      <line x1="204" y1="628" x2="202" y2="646"/><line x1="222" y1="628" x2="220" y2="646"/>
+      <line x1="240" y1="628" x2="238" y2="646"/><line x1="258" y1="628" x2="256" y2="646"/>
+      <line x1="276" y1="628" x2="275" y2="646"/><line x1="294" y1="628" x2="294" y2="646"/>
+      <line x1="312" y1="628" x2="312" y2="646"/><line x1="330" y1="628" x2="331" y2="646"/>
+      <line x1="348" y1="628" x2="349" y2="646"/><line x1="366" y1="628" x2="368" y2="646"/>
+      <line x1="384" y1="628" x2="386" y2="646"/><line x1="402" y1="628" x2="404" y2="646"/>
+      <line x1="420" y1="628" x2="422" y2="646"/><line x1="436" y1="628" x2="438" y2="646"/>
+    </g>
+  
+</svg>
