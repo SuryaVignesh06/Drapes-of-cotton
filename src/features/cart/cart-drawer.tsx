@@ -98,7 +98,6 @@ export function CartDrawer() {
                         src={item.imageUrl}
                         alt={item.imageAlt}
                         fill
-                        unoptimized={item.imageUrl.endsWith(".svg")}
                         sizes="72px"
                         className="object-cover"
                       />

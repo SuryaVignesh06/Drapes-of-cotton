@@ -108,7 +108,6 @@ export function ProductCard({ product, className }: ProductCardProps) {
               src={primaryImage.imageUrl}
               alt={primaryImage.altText}
               fill
-              unoptimized={primaryImage.imageUrl.endsWith(".svg")}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
               className={cn(
                 "object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]",
@@ -121,7 +120,6 @@ export function ProductCard({ product, className }: ProductCardProps) {
               src={secondaryImage.imageUrl}
               alt={secondaryImage.altText}
               fill
-              unoptimized={secondaryImage.imageUrl.endsWith(".svg")}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
               className="object-cover opacity-0 transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:opacity-100"
             />

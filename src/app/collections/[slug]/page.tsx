@@ -13,6 +13,11 @@ import {
   listPublishedProducts,
 } from "@/lib/services/product.service";
 
+export async function generateStaticParams() {
+  const { collections } = await listPublishedCollections();
+  return collections.map((collection) => ({ slug: collection.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {

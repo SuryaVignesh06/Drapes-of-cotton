@@ -215,7 +215,6 @@ export default async function HomePage() {
                     src={collection.coverImage}
                     alt={`${collection.name} collection`}
                     fill
-                    unoptimized={collection.coverImage.endsWith(".svg")}
                     sizes="(max-width: 640px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />

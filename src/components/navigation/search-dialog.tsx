@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Pill } from "@/components/ui/pill";
+import { DEMO_PRODUCTS } from "@/data/catalog";
+import { filterAndSortProducts } from "@/lib/services/catalog-helpers";
 import { formatInrFromPaise } from "@/lib/utils";
 
 interface SearchHit {
@@ -39,41 +41,27 @@ export function SearchDialog({
 }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchHit[]>([]);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const visibleResults = useMemo<SearchHit[]>(() => {
     const trimmed = query.trim();
     if (!open || trimmed.length === 0) {
-      return;
+      return [];
     }
-
-    const controller = new AbortController();
-    const timer = setTimeout(async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(
-          `/api/products/search?q=${encodeURIComponent(trimmed)}`,
-          { signal: controller.signal }
-        );
-        if (res.ok) {
-          const data = (await res.json()) as { results: SearchHit[] };
-          setResults(data.results ?? []);
-        }
-      } catch {
-        // Ignore aborted searches
-      } finally {
-        setLoading(false);
-      }
-    }, 200);
-
-    return () => {
-      clearTimeout(timer);
-      controller.abort();
-    };
+    const { items } = filterAndSortProducts(DEMO_PRODUCTS, {
+      search: trimmed,
+      pageSize: 6,
+    });
+    return items.map((item) => ({
+      id: item.id,
+      name: item.name,
+      slug: item.slug,
+      price: item.price,
+      fabric: item.fabric,
+      color: item.color,
+      imageUrl: item.images[0]?.imageUrl ?? "/images/products/kora-ivory-olive-main.jpg",
+      imageAlt: item.images[0]?.altText ?? item.name,
+    }));
   }, [query, open]);
-
-  const visibleResults = query.trim().length === 0 ? [] : results;
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -137,10 +125,6 @@ export function SearchDialog({
                 ))}
               </div>
             </div>
-          ) : loading ? (
-            <p className="py-8 text-center text-sm text-muted-olive">
-              Searching curated weaves...
-            </p>
           ) : visibleResults.length === 0 ? (
             <div className="rounded-[var(--radius-lg)] border border-border bg-surface-secondary px-6 py-8 text-center">
               <p className="font-editorial text-xl text-deep-earth-olive">
@@ -176,7 +160,6 @@ export function SearchDialog({
                         src={hit.imageUrl}
                         alt={hit.imageAlt}
                         fill
-                        unoptimized={hit.imageUrl.endsWith(".svg")}
                         sizes="48px"
                         className="object-cover"
                       />

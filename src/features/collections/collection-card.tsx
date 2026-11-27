@@ -15,7 +15,6 @@ export function CollectionCard({ collection }: { collection: Collection }) {
             src={collection.coverImage}
             alt={`${collection.name} cotton saree collection`}
             fill
-            unoptimized={collection.coverImage.endsWith(".svg")}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
           />

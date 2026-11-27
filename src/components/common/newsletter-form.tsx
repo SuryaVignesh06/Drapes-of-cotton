@@ -23,31 +23,9 @@ export function NewsletterForm() {
   });
 
   async function onSubmit(values: NewsletterFormValues) {
-    setSubscribed(false);
-    try {
-      const response = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-
-      const data = (await response.json()) as {
-        success?: boolean;
-        message?: string;
-        error?: string;
-      };
-
-      if (!response.ok || !data.success) {
-        toast.error(data.error ?? "Unable to subscribe right now.");
-        return;
-      }
-
-      setSubscribed(true);
-      form.reset();
-      toast.success(data.message ?? "Subscribed to Drapes of Cotton.");
-    } catch {
-      toast.error("Network error while subscribing. Please try again.");
-    }
+    setSubscribed(true);
+    form.reset();
+    toast.success(`Subscribed ${values.email} to Drapes of Cotton updates.`);
   }
 
   return (

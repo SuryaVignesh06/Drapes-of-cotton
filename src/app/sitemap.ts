@@ -5,9 +5,12 @@ import { listPublishedProducts } from "@/lib/services/product.service";
 
 const STATIC_MODIFIED = new Date("2026-11-27T00:00:00.000Z");
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { NEXT_PUBLIC_APP_URL } = getPublicEnv();
-  const baseUrl = NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const baseUrl =
+    NEXT_PUBLIC_APP_URL ?? "https://suryavignesh06.github.io/Drapes-of-cotton";
 
   const [{ products }, { collections }] = await Promise.all([
     listPublishedProducts(),

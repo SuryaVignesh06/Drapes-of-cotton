@@ -11,7 +11,13 @@ import { getPublicEnv } from "@/config/env";
 import {
   getProductBySlug,
   getRelatedProducts,
+  listPublishedProducts,
 } from "@/lib/services/product.service";
+
+export async function generateStaticParams() {
+  const { products } = await listPublishedProducts();
+  return products.map((product) => ({ slug: product.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -53,7 +59,8 @@ async function ProductSlugContent({
 
   const related = await getRelatedProducts(product, 4);
   const { NEXT_PUBLIC_APP_URL } = getPublicEnv();
-  const baseUrl = NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const baseUrl =
+    NEXT_PUBLIC_APP_URL ?? "https://suryavignesh06.github.io/Drapes-of-cotton";
 
   const productJsonLd = {
     "@context": "https://schema.org",

@@ -82,7 +82,6 @@ export function WishlistView({ allProducts }: { allProducts: Product[] }) {
                   src={primaryImage.imageUrl}
                   alt={primaryImage.altText}
                   fill
-                  unoptimized={primaryImage.imageUrl.endsWith(".svg")}
                   sizes="(max-width: 640px) 100vw, 25vw"
                   className="object-cover"
                 />

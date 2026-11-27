@@ -94,7 +94,6 @@ export function HeroProductShowcase({ products }: { products: Product[] }) {
                 fill
                 loading="eager"
                 priority
-                unoptimized={(mainImage?.imageUrl ?? "").endsWith(".svg")}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center transition-opacity duration-300"
               />

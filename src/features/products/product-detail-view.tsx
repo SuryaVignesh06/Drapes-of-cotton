@@ -151,7 +151,6 @@ export function ProductDetailView({ product }: { product: Product }) {
             src={activeImage.imageUrl}
             alt={activeImage.altText}
             fill
-            unoptimized={activeImage.imageUrl.endsWith(".svg")}
             priority
             sizes="(max-width: 1024px) 100vw, 55vw"
             className="object-cover"
@@ -188,7 +187,6 @@ export function ProductDetailView({ product }: { product: Product }) {
                     src={img.imageUrl}
                     alt={img.altText}
                     fill
-                    unoptimized={img.imageUrl.endsWith(".svg")}
                     sizes="120px"
                     className="object-cover"
                   />
@@ -443,7 +441,6 @@ export function ProductDetailView({ product }: { product: Product }) {
               src={activeImage.imageUrl}
               alt={activeImage.altText}
               fill
-              unoptimized={activeImage.imageUrl.endsWith(".svg")}
               sizes="(max-width: 1024px) 100vw, 768px"
               className="object-contain"
             />

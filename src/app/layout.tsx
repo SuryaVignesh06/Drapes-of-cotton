@@ -21,7 +21,9 @@ const inter = Inter({
 const publicEnv = getPublicEnv();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(publicEnv.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(
+    publicEnv.NEXT_PUBLIC_APP_URL ?? "https://suryavignesh06.github.io/Drapes-of-cotton"
+  ),
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,

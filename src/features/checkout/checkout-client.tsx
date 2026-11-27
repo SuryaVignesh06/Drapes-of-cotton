@@ -632,7 +632,6 @@ export function CheckoutClient({
                     src={item.imageUrl}
                     alt={item.imageAlt}
                     fill
-                    unoptimized={item.imageUrl.endsWith(".svg")}
                     sizes="48px"
                     className="object-cover"
                   />
